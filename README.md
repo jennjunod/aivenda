@@ -4,8 +4,9 @@ Before TweetyTag can auto post the users that have registered to be tagged in Tw
 
 1. [Create database with Aiven](https://github.com/jennjunod/aivenda/blob/main/README.md#1-create-service-in-your-aiven-account)
 2. [Prisma Client for database access](https://github.com/jennjunod/aivenda/blob/main/README.md#2-using-the-relational-databases-article-from-prisma-create-project-setup)(Using JavaScript and MySQL)
-3. [Write to database](https://github.com/jennjunod/aivenda/blob/main/README.md#3-create-a-new-file-named-writejs-to-add-the-following-code-to-it)
-4. [Read from database](https://github.com/jennjunod/aivenda/blob/main/README.md#4-create-a-new-file-named-readjs-to-add-the-following-code-to-it)
+3. [Read/Write Query](
+4. [Write to database](https://github.com/jennjunod/aivenda/blob/main/README.md#3-create-a-new-file-named-writejs-to-add-the-following-code-to-it)
+5. [Read from database](https://github.com/jennjunod/aivenda/blob/main/README.md#4-create-a-new-file-named-readjs-to-add-the-following-code-to-it)
 
 
 ## 1. Create Service in your Aiven Account:
@@ -39,6 +40,55 @@ Change to:
 
 
 ## 3. Create a new file named `write.js` to add the following code to it:
+*This will allow you to read and write from the same file*
+
+        const { PrismaClient } = require('@prisma/client')
+
+        const prisma = new PrismaClient()
+
+        async function main() {
+            // ... you will write your Prisma Client queries here
+            const allUsers = await prisma.user.findMany()
+            console.log(allUsers)
+          }
+
+        main()
+          .then(async () => {
+            await prisma.$disconnect()
+          })
+          .catch(async (e) => {
+            console.error(e)
+            await prisma.$disconnect()
+            process.exit(1)
+          })
+
+          async function main() {
+            await prisma.user.create({
+              data: {
+                name: 'Alice',
+                email: 'alice@prisma.io',
+                posts: {
+                  create: { title: 'Hello World' },
+                },
+                profile: {
+                  create: { bio: 'I like turtles' },
+                },
+              },
+            })
+
+            const allUsers = await prisma.user.findMany({
+              include: {
+                posts: true,
+                profile: true,
+              },
+            })
+            console.dir(allUsers, { depth: null })
+          }
+* To ensure the database can write a query, run in your terminal, `node write.js`
+
+# To Query the DB seperately, add the following files: 
+
+## 4. Create a new file named `write.js` to add the following code to it:
 
         async function main() {
           await prisma.user.create({
@@ -65,7 +115,7 @@ Change to:
 * To ensure the database can write a query, run in your terminal, `node write.js`
 
 
-## 4. Create a new file named `read.js` to add the following code to it:
+## 5. Create a new file named `read.js` to add the following code to it:
 
         const { PrismaClient } = require('@prisma/client')
 
