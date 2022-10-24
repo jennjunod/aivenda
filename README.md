@@ -27,15 +27,18 @@ Before TweetyTag can auto post the users that have registered to be tagged in Tw
 
 ## 2. Using the [Relational databases](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-node-mysql) article from Prisma, Create project setup
 * Continue by [connecting your database](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/connect-your-database-node-mysql), which with Prisma, the default database provider is Postgresql, make sure to change the provider to MySQL.
-    datasource db {
-      provider = "postgresql"
-      url      = env("DATABASE_URL")
-    }
+
+        datasource db {
+          provider = "postgresql"
+          url      = env("DATABASE_URL")
+        }
+        
 Change to: 
-    datasource db {
-      provider = "mysql"
-      url      = env("DATABASE_URL")
-    }
+
+        datasource db {
+          provider = "mysql"
+          url      = env("DATABASE_URL")
+        }
 * When the Prisma Client Setup has been completed, files to create the write and read [queries to the database](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/querying-the-database-node-mysql). 
 
 
