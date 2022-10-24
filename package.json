@@ -1,0 +1,26 @@
+{
+  "name": "aivenda",
+  "version": "1.0.0",
+  "description": "Before TweetyTag can auto post the users that have registered to be tagged in TwitterSpace reminders, the database must be setup. We will be using [Prisma ORM](https://www.prisma.io/) as the tool to connect the backend of node to use MySQL with Aiven.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jennjunod/aivenda.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jennjunod/aivenda/issues"
+  },
+  "homepage": "https://github.com/jennjunod/aivenda#readme",
+  "devDependencies": {
+    "prisma": "^4.5.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.5.0"
+  }
+}
