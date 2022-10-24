@@ -146,25 +146,25 @@ Change to:
 
 ## Success of the command will look like this:
 `node read.js`
-        [
-          {
-            id: 1,
-            email: 'alice@prisma.io',
-            name: 'Alice',
-            posts: [
+            [
               {
                 id: 1,
-                createdAt: 2022-10-24T23:06:12.491Z,
-                updatedAt: 2022-10-24T23:06:12.491Z,
-                title: 'Hello World',
-                content: null,
-                published: false,
-                authorId: 1
+                email: 'alice@prisma.io',
+                name: 'Alice',
+                posts: [
+                  {
+                    id: 1,
+                    createdAt: 2022-10-24T23:06:12.491Z,
+                    updatedAt: 2022-10-24T23:06:12.491Z,
+                    title: 'Hello World',
+                    content: null,
+                    published: false,
+                    authorId: 1
+                  }
+                ],
+                profile: { id: 1, bio: 'I like turtles', userId: 1 }
               }
-            ],
-            profile: { id: 1, bio: 'I like turtles', userId: 1 }
-          }
-        ]
+            ]
 
 ### Next blog series, we will review how to setup your Prisma Client to allow front end input your database and in the final post, we will share how to connect to the Twitter API. 
 
