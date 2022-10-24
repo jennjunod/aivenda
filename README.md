@@ -4,7 +4,7 @@ Before TweetyTag can auto post the users that have registered to be tagged in Tw
 
 1. [Create database with Aiven](https://github.com/jennjunod/aivenda/blob/main/README.md#1-create-service-in-your-aiven-account)
 2. [Prisma Client for database access](https://github.com/jennjunod/aivenda/blob/main/README.md#2-using-the-relational-databases-article-from-prisma-create-project-setup)(Using JavaScript and MySQL)
-3. [Read/Write Query](
+3. [Read/Write Query](https://github.com/jennjunod/aivenda/blob/main/README.md#3-create-a-new-file-named-writejs-to-add-the-following-code-to-it)
 4. [Write to database](https://github.com/jennjunod/aivenda/blob/main/README.md#3-create-a-new-file-named-writejs-to-add-the-following-code-to-it)
 5. [Read from database](https://github.com/jennjunod/aivenda/blob/main/README.md#4-create-a-new-file-named-readjs-to-add-the-following-code-to-it)
 
@@ -39,7 +39,7 @@ Change to:
 * When the Prisma Client Setup has been completed, files to create the write and read [queries to the database](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/querying-the-database-node-mysql). 
 
 
-## 3. Create a new file named `write.js` to add the following code to it:
+## 3. Create a new file named `index.js` to add the following code to it:
 *This will allow you to read and write from the same file*
 
         const { PrismaClient } = require('@prisma/client')
