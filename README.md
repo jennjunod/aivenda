@@ -2,10 +2,10 @@
 
 Before TweetyTag can auto post the users that have registered to be tagged in TwitterSpace reminders, the database must be setup. We will be using [Prisma ORM](https://www.prisma.io/) as the tool to connect the backend of node to use MySQL with Aiven. 
 
-1. [Create database with Aiven](https://github.com/jennjunod/aivenda/main/README.md#create-service-in-your-aiven-account)
-2. [Prisma Client for database access](https://github.com/jennjunod/aivenda/main/README.md#using-the-relational-databases-article-from-prisma-create-project-setup)  (Using JavaScript and MySQL)
-3. [Write to database](https://github.com/jennjunod/aivenda/main/README.md#create-a-new-file-named-writejs-to-add-the-following-code-to-it)
-4. [Read from database](https://github.com/jennjunod/aivenda/main/README.md#create-a-new-file-named-readjs-to-add-the-following-code-to-it)
+1. [Create database with Aiven](https://github.com/jennjunod/aivenda/blob/main/README.md#1-create-service-in-your-aiven-account)
+2. [Prisma Client for database access](https://github.com/jennjunod/aivenda/blob/main/README.md#2-using-the-relational-databases-article-from-prisma-create-project-setup)(Using JavaScript and MySQL)
+3. [Write to database](https://github.com/jennjunod/aivenda/blob/main/README.md#3-create-a-new-file-named-writejs-to-add-the-following-code-to-it)
+4. [Read from database](https://github.com/jennjunod/aivenda/blob/main/README.md#4-create-a-new-file-named-readjs-to-add-the-following-code-to-it)
 
 
 ## 1. Create Service in your Aiven Account:
